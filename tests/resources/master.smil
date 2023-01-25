@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE smil PUBLIC "-//W3C//DTD SMIL 1.0//EN" "http://www.w3.org/TR/REC-smil/SMIL10.dtd">
+<smil>
+<head>
+<meta name="ncc:generator" content="SigtunaDAR3 3.0.20" />
+<meta name="dc:format" content="Daisy 2.02" />
+<meta name="dc:title" content="This is a test" />
+<meta name="ncc:timeInThisSmil" content="00:01:00" />
+<meta name="dc:identifier" content="" />
+<layout>
+<region id="txtView" />
+</layout>
+</head>
+<body>
+<ref title="This is a test" src="test0001.smil" id="pegg_0001" />
+<ref title="Chapitre 1" src="test0002.smil" id="text_0007" />
+<ref title="Fin de l&#39;enregistrement" src="test0003.smil" id="text_0023" />
+</body>
+</smil>

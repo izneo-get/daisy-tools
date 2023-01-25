@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE smil PUBLIC "-//W3C//DTD SMIL 1.0//EN" "http://www.w3.org/TR/REC-smil/SMIL10.dtd">
+<smil>
+<head>
+<meta name="ncc:generator" content="SigtunaDAR3 3.0.20" />
+<meta name="dc:format" content="Daisy 2.02" />
+<meta name="title" content="Chapitre 2" />
+<meta name="dc:title" content="This is a test" />
+<meta name="ncc:timeInThisSmil" content="0:01:00" />
+<layout>
+<region id="txtView" />
+</layout>
+</head>
+<body>
+<seq dur="10.000s">
+<par endsync="last">
+<text src="ncc.html#text_000a" id="text_000a" />
+<seq>
+<audio src="chapter_2.mp3" clip-begin="npt=0.000s" clip-end="npt=5.000s" id="abcd_0001" />
+<audio src="chapter_2.mp3" clip-begin="npt=5.000s" clip-end="npt=15.000s" id="abcd_0002" />
+<audio src="chapter_2.mp3" clip-begin="npt=15.000s" clip-end="npt=20.000s" id="abcd_0003" />
+<audio src="dummy.mp3" clip-begin="npt=20.000s" clip-end="npt=60.0s" id="abcd_0004" />
+<audio src="chapter_2.mp3" clip-begin="npt=20.000s" clip-end="npt=60.00s" id="abcd_0004" />
+</seq>
+</par>
+</seq>
+</body>
+</smil>
