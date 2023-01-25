@@ -1,6 +1,6 @@
 # Daisy-tools
 
-Outils qui permettent de simplifier des actions sur les livres audios au format "Daisy 2".
+Outils qui permettent de simplifier des actions sur les livres audios au format "[Daisy 2](https://fr.wikipedia.org/wiki/Daisy_(livre_audio))".
 
 ## Daisy-renamer
 Permet de renommer automatiquement les fichiers d'un livre audio au format "Daisy 2". 
