@@ -31,7 +31,7 @@ git clone https://github.com/izneo-get/daisy-tools.git
 cd daisy-tools
 ```
 
-#### Avec Poetry
+#### Avec Poetry (recommandé)
 ```
 poetry shell
 poetry install 
@@ -42,5 +42,12 @@ poetry install
 python -m venv .venv
 .venv\Scripts\activate.bat
 pip install -U pip
-pip install -r requirements.txt
+pip install -e .
+```
+
+
+### Compilation
+```
+python -m nuitka --standalone --onefile --windows-icon-from-ico=resources\daisy_tools.ico daisy_renamer/__main__.py
+ren __main__.exe daisy_renamer.exe
 ```
