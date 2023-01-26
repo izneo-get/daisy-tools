@@ -8,6 +8,7 @@ __VERSION__: str = "0.1.1"
 
 
 def main() -> None:
+    print(f"Daisy Renamer (version {__VERSION__})")
     daisy_folder = select_folder(MASTER_FILE)
     sub_smil = get_sub_smil(f"{daisy_folder}/{MASTER_FILE}")
     chapters: List = []
