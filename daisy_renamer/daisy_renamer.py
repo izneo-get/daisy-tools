@@ -4,11 +4,21 @@ from bs4 import BeautifulSoup
 from collections import defaultdict
 import os
 import shutil
-import unicodedata
+import re
 
 
 MASTER_FILE: str = "master.smil"
 DEFAULT_OUTPUT: str = "OUTPUT"
+
+
+def clean_filename(filename: str) -> str:
+    chars = '\\/:*<>?"|'
+    for c in chars:
+        filename = filename.replace(c, "_")
+    filename = re.sub(r"\s+", " ", filename)
+    filename = re.sub(r"\.+$", "", filename)
+    filename = filename.strip()
+    return filename
 
 
 @dataclass
@@ -69,6 +79,8 @@ def batch_rename(chapters: List[chapter], output_folder: str = DEFAULT_OUTPUT) -
     for chapter in chapters:
         chapter_no: str = f"{padding}{chapter.chapter_no}"
         ext: str = os.path.splitext(chapter.audio_file)[1]
-        new_file_name: str = f"{output_folder}/{chapter_no[-padding_length:]}. {chapter.title}{ext}"
+        new_file_name: str = (
+            f'{output_folder}/{clean_filename(f"{chapter_no[-padding_length:]}. {chapter.title}{ext}")}'
+        )
         print(f'Copie de "{chapter.audio_file}" vers "{new_file_name}".')
         shutil.copy(chapter.audio_file, new_file_name)
