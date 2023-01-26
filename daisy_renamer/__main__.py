@@ -4,7 +4,7 @@ from daisy_renamer import chapter, select_folder, get_sub_smil, get_audiofile_fr
 MASTER_FILE: str = "master.smil"
 DEFAULT_OUTPUT: str = "OUTPUT"
 
-__VERSION__: str = "0.1.0"
+__VERSION__: str = "0.1.1"
 
 
 def main() -> None:

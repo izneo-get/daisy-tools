@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from collections import defaultdict
 import os
 import shutil
+import unicodedata
 
 
 MASTER_FILE: str = "master.smil"
@@ -21,6 +22,8 @@ def select_folder(master_file: str = MASTER_FILE) -> str:
     daisy_folder = "?"
     while not os.path.isdir(daisy_folder) or not os.path.exists(f"{daisy_folder}/{master_file}"):
         daisy_folder = input('Répertoire du livre audio (doit contenir un fichier "master.smil") : ')
+        if daisy_folder[0] == '"' and daisy_folder[-1] == '"':
+            daisy_folder = daisy_folder[1:-1]
     return daisy_folder
 
 
@@ -32,7 +35,7 @@ def get_sub_smil(mater_smil_file: str) -> List[Set]:
     for elem in soup.find_all("ref"):
         title = elem["title"] or ""
         src = elem["src"] or ""
-        title = title.encode("latin1").decode()
+        title = title.encode("cp1252").decode()
         if title and src:
             sub_smil_files.append((title, src))
     return sub_smil_files
