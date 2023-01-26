@@ -34,6 +34,8 @@ def select_folder(master_file: str = MASTER_FILE) -> str:
         daisy_folder = input('Répertoire du livre audio (doit contenir un fichier "master.smil") : ')
         if daisy_folder[0] == '"' and daisy_folder[-1] == '"':
             daisy_folder = daisy_folder[1:-1]
+        if daisy_folder.endswith(MASTER_FILE):
+            daisy_folder = daisy_folder[: -len(MASTER_FILE)]
     return daisy_folder
 
 

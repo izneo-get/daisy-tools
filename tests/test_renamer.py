@@ -2,7 +2,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from daisy_renamer.daisy_renamer import get_audiofile_from_smil, get_sub_smil
+from daisy_renamer.daisy_renamer import get_audiofile_from_smil, get_sub_smil, clean_filename
 
 
 def test_get_audiofile_from_smil() -> None:
@@ -22,3 +22,7 @@ def test_get_sub_smil() -> None:
     sub_smil = get_sub_smil(test_smil)
     assert len(sub_smil) == 3
     assert sub_smil[-1] == ("Fin de l'enregistrement", "test0003.smil")
+
+
+def test_clean_filename() -> None:
+    assert clean_filename("test : test /!\ test") == "test _ test _!_ test"
